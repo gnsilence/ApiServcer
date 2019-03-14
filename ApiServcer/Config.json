@@ -8,17 +8,17 @@
     "ManagerPWD": "123456",
     /*启用https访问*/
     "UseSSL": true,
-    /*证书文件路径*/
-    "CertificateFile": "SSLFiles\\214817388690814.pfx",
+    /*证书文件路径,需要创建路径和导入文件*/
+    "CertificateFile": "SSLFiles\\****.pfx",
     /*证书密码*/
-    "CertificatePassword": "214817388690814"
+    "CertificatePassword": "***"
   },
   "ConnectionStrings": {
     /*是否启用codefirst模式*/
     "Api.UseCodefirst": true,
     /*数据库连接*/
     "Api.SqlServer": "Server=127.0.0.1;Database=ApiGateWay;uid=sa;pwd=123456;MultipleActiveResultSets=true;Max pool size=5",
-    "Api.Mysql": "Server=47.105.185.242;Port=3306;Database=ApiDataBase;Uid=root;Pwd=123456;charset=utf8;SslMode=none;Allow User Variables=True;Max pool size=5",
+    "Api.Mysql": "Server=127.0.0.1;Port=3306;Database=ApiDataBase;Uid=root;Pwd=123456;charset=utf8;SslMode=none;Allow User Variables=True;Max pool size=5",
     "Api.redis": "localhost"
   }
 }
