@@ -12,7 +12,12 @@
     <PackageReference Include="BeetleX.FastHttpApi" Version="1.3.8.2" />
     <PackageReference Include="BeetleX.FastHttpApi.Admin" Version="0.7.8" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.EventLog" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="2.1.0" />
+    <PackageReference Include="NLog" Version="4.6.0-rc2" />
+    <PackageReference Include="NLog.Config" Version="4.6.0-rc2" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
     <PackageReference Include="Topshelf" Version="4.2.0" />
   </ItemGroup>

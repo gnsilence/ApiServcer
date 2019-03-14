@@ -67,5 +67,9 @@ namespace Api.CommonUtils
         /// 证书密码
         /// </summary>
         public string SSLPwd => Configuration["ServerSettings:CertificatePassword"];
+        /// <summary>
+        /// SSL端口
+        /// </summary>
+        public int SSLPort=> Convert.ToInt32(Configuration["ServerSettings:SSLPort"]);
     }
 }

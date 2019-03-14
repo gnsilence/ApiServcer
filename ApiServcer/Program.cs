@@ -8,16 +8,24 @@ using Microsoft.Extensions.Logging;
 using ApiServcer.IocContainer;
 using Api.Services;
 using Api.IService;
+using NLog;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace ApiServcer
 {
     class Program
     {
-
+     
         #region 创建服务相关.使用Generic host
         static void Main(string[] args)
         {
             var builder = new HostBuilder()
+                .ConfigureAppConfiguration((hostContext, config) =>
+                {
+                    config.SetBasePath(Directory.GetCurrentDirectory());
+                    config.AddJsonFile("Config.json", optional: true);
+                })
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddSingleton<IHostLifetime, OwnLifetime>();
@@ -29,8 +37,10 @@ namespace ApiServcer
                 .ConfigureLogging((hostingContext, logging) =>
                 {
                     logging.AddEventLog();//启用系统事件日志，
-                })
-                ;
+                    logging.AddDebug();
+                    logging.AddConsole();
+                    logging.AddEventSourceLogger();
+                });
 
             //builder.Build().Run();
             HostFactory.Run(x =>

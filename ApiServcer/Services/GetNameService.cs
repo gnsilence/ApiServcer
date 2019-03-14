@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using NLog;
 
 namespace ApiServcer.Services
 {
@@ -16,6 +17,8 @@ namespace ApiServcer.Services
     public class GetNameService
     {
         private readonly IGetService _getService = AutofacContainer.Resolve<IGetService>();
+        //Nlog
+        private static Logger logger = new LogFactory().GetCurrentClassLogger();
         private static JWTHelper JWTHelper = new JWTHelper();
         [Get(Route = "{name}-{age}")]
         //[JWTFilter]
@@ -38,6 +41,7 @@ namespace ApiServcer.Services
         [DefaultJsonResultFilter]
         public object Hello (string name)
         {
+            logger.Info($"调用测试接口,获取到的值：{name}");
             return new { Name = name, DateTime = DateTime.Now.ToLongTimeString() };
         }
         //获取token
