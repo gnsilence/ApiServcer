@@ -34,7 +34,12 @@ namespace ApiServcer.Services
         //{
         //    return new { Name = "张三" };
         //}
-
+        [Get(Route ="{name}")]
+        [DefaultJsonResultFilter]
+        public object Hello (string name)
+        {
+            return new { Name = name, DateTime = DateTime.Now.ToLongTimeString() };
+        }
         //获取token
         [Get]
         public object GetToken(string name, string role)
